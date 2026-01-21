@@ -48,7 +48,6 @@ resource "netbox_device" "test" {
 }
 
 data "netbox_device_render_config" "test" {
-  depends_on = [netbox_device.test]
   device_id = netbox_device.test.id
 }`, testName),
 				Check: resource.ComposeTestCheckFunc(
